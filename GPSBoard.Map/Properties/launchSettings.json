@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:58027/",
+      "applicationUrl": "http://localhost:50245/",
       "sslPort": 0
     }
   },
@@ -11,19 +11,17 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/gps",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "GPSBoard.WebApi": {
+    "GPSBoard.Map": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/gps",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:58028/"
+      "applicationUrl": "http://localhost:50246/"
     }
   }
 }

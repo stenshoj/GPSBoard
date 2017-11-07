@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPSBoard.WebApi", "GPSBoard.WebApi\GPSBoard.WebApi.csproj", "{7A1A8CD4-C2D9-47CE-8583-2A96FB8B30BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GPSBoard.WebApi", "GPSBoard.WebApi\GPSBoard.WebApi.csproj", "{7A1A8CD4-C2D9-47CE-8583-2A96FB8B30BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GPSBoard.Data", "GPSBoard.Data\GPSBoard.Data.csproj", "{A6C6C66A-E270-4BDF-A060-7A679CB8F2B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GPSBoard.Common", "GPSBoard.Common\GPSBoard.Common.csproj", "{25E9D90D-E554-4703-A560-15E2C4474056}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPSBoard.Map", "GPSBoard.Map\GPSBoard.Map.csproj", "{00187FE2-96CB-418B-98E2-6EED2B0A754A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{7A1A8CD4-C2D9-47CE-8583-2A96FB8B30BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A1A8CD4-C2D9-47CE-8583-2A96FB8B30BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A1A8CD4-C2D9-47CE-8583-2A96FB8B30BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6C6C66A-E270-4BDF-A060-7A679CB8F2B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6C6C66A-E270-4BDF-A060-7A679CB8F2B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6C6C66A-E270-4BDF-A060-7A679CB8F2B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6C6C66A-E270-4BDF-A060-7A679CB8F2B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25E9D90D-E554-4703-A560-15E2C4474056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25E9D90D-E554-4703-A560-15E2C4474056}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25E9D90D-E554-4703-A560-15E2C4474056}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25E9D90D-E554-4703-A560-15E2C4474056}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00187FE2-96CB-418B-98E2-6EED2B0A754A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00187FE2-96CB-418B-98E2-6EED2B0A754A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00187FE2-96CB-418B-98E2-6EED2B0A754A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00187FE2-96CB-418B-98E2-6EED2B0A754A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

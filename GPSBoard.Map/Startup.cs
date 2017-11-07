@@ -6,27 +6,20 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using GPSBoard.WebApi.Converters;
 using GPSBoard.Data;
 using Microsoft.EntityFrameworkCore;
+using GPSBoard.Map.ViewModelRepositories;
 
-namespace GPSBoard.WebApi
+namespace GPSBoard.Map
 {
     public class Startup
     {
-        public Startup(IHostingEnvironment env)
+        public Startup(IConfiguration configuration)
         {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-                .AddEnvironmentVariables();
-            Configuration = builder.Build();
+            Configuration = configuration;
         }
 
-        public IConfigurationRoot Configuration { get; }
+        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -34,7 +27,7 @@ namespace GPSBoard.WebApi
             services.AddDbContext<GPSBoardContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddTransient<CoordinateConverter, CoordinateConverter>();
+            services.AddTransient<CoordinateViewModelRepository, CoordinateViewModelRepository>();
             services.AddScoped<ICoordinateRepository, CoordinateRepository>();
             services.AddScoped<GPSBoardContext, GPSBoardContext>();
             services.AddMvc();
@@ -46,9 +39,21 @@ namespace GPSBoard.WebApi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseBrowserLink();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
             }
 
-            app.UseMvc();
+            app.UseStaticFiles();
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }
